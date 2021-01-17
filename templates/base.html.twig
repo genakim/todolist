@@ -6,6 +6,14 @@
     {% endblock %}
 </head>
 <body>
+<div id="app">
+    <toolbox></toolbox>
+    <div class="grid grid-cols-4 gap-2 p-3">
+        <list v-for="list in lists" :key="list.id" v-bind="list"/>
+    </div>
+    <list-dialog ref="dialog"/>
+</div>
+
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
